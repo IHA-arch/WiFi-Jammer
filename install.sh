@@ -44,7 +44,7 @@ fi
 
 sleep 0.5
 
-printf "install random2...."
+printf "\ninstall random2....\n"
 pip3 install random2
 
 #cp -r jammer_IHA /usr/share
