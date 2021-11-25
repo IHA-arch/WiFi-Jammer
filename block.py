@@ -85,10 +85,6 @@ def get_block():
             cc = cc[1].replace('\n', '')
         else:
             print("\033[1;34mEntered Access Point '\033[1;37m{}\033[1;34m' Not in Range...".format(essid))
-        if essid in cc:
-            print("\033[1;31m You Already connect with '\033[1;36m{}\033[1;31m' Access Point".format(essid))
-        else:
-            pass
 
         k = open('pass.key', 'r')
         l = k.read()
@@ -100,23 +96,30 @@ def get_block():
             pas1 = pas1[1].split('\n')
             cmd = "nmcli d wifi connect '{}' password {} > /dev/null 2>&1 &".format(essid, pas1[0])
             os.system(cmd)
+            return 'tt'
         
         else:
             print("Own Machine has't connected to '{}' even once".format(essid))
+            return 'ff'
     except KeyboardInterrupt:
-        pass
+        return 'ff'
+
         
 
 
 def main():
     root()
     update_pass_list()
-    condition=True
+    #condition=True
     one_time_connection()
     start_time = time()
     interface_Name()
-    get_block()
-    mac_changer()
+    kk=get_block()
+    if kk == 'tt':
+        condition=True
+        mac_changer()
+    if kk == 'ff':
+        condition=False
     while condition:
         try:
             socket.create_connection(("1.1.1.1", 53))
@@ -132,5 +135,3 @@ def main():
             print("\n")
             mac_changer()
             start_time=time()
-
-
