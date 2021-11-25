@@ -47,7 +47,14 @@ sleep 0.5
 printf "install random2...."
 pip3 install random2
 
-cp -r jammer_IHA /usr/share
+#cp -r jammer_IHA /usr/share
+mkdir /usr/share/jammer_IHA
+cp block.py /usr/share/jammer_IHA
+cp interface.py /usr/share/jammer_IHA
+cp jammer.py /usr/share/jammer_IHA
+cp list.py /usr/share/jammer_IHA
+cp scan.py /usr/share/jammer_IHA
+
 
 access() {
 cat > /usr/local/bin/wifijammer <<EOF
@@ -61,4 +68,3 @@ chmod +x /usr/local/bin/wifijammer
 printf "\n\ntype 'wifijammer' anywhere on the terminal\n"
 }
 access
-
