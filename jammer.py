@@ -15,6 +15,7 @@ def root():
 def banner(kka):
     g='\033[1;3{}m'.format(kka)
     print('{}m     m   "    mmmmmm   "             mmm                                    \n#  #  # mmm    #      mmm               #   mmm   mmmmm  mmmmm   mmm    m mm \n" #"# #   #    #mmmmm   #               #  "   #  # # #  # # #  #"  #   #"  "\n ## ##"   #    #        #     """       #  m"""#  # # #  # # #  #""""   #    \n #   #  mm#mm  #      mm#mm         "mmm"  "mm"#  # # #  # # #  "#mm"   #\n'.format(g))
+    
 
 def about():
     print('\n\n\033[1;31mCreate By     \t\t\t        \033[1;36m>\033[1;37m \tIHA\n\033[1;31mWritten Language\t        \t\033[1;36m>\033[1;37m \tPython3 & shell\n\033[1;31mSupported Operation System\t\t\033[1;36m>\033[1;37m \tKali Linux\n\033[1;31mHardware Require\t\t\t\033[1;36m>\033[1;37m\tWireless Adapter(support Monitor Mode)\n\033[1;31mGitHub \t\t\t\t\t\033[1;36m>\033[1;37m\thttps://github.com/IHA-arch\n\n\n')
@@ -114,6 +115,9 @@ def Menu():
     header(i, name)
     i='kill'
     name = 'Close Another xterm windows'
+    header(i, name)
+    i='ctrl+c'
+    name = 'Stop any running process'
     header(i, name)
 
 
